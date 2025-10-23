@@ -1,4 +1,4 @@
-# Quiz Application
+# English Grammar Basics Quiz
 
 ## Round 2 Brief
-This is an updated version of the quiz application that now includes additional questions on English grammar basics. After submitting the quiz, the user will see their score displayed in an alert.
+This is an updated version of the English Grammar Basics Quiz. It now includes additional questions to enhance your learning experience. Test your knowledge and see how well you understand the basics of English grammar!
