@@ -1,34 +1,19 @@
-<div id="quiz">
-    <h2>English Grammar Basics Quiz</h2>
-    <form>
-        <div>
-            <p>1. What is the correct form of the verb in the sentence: "She ___ to the store every Saturday."</p>
-            <label><input type="radio" name="question1" value="a"> a) go</label>
-            <label><input type="radio" name="question1" value="b"> b) goes</label>
-            <label><input type="radio" name="question1" value="c"> c) gone</label>
-            <label><input type="radio" name="question1" value="d"> d) going</label>
-        </div>
-        <div>
-            <p>2. Which of the following is a correct sentence?</p>
-            <label><input type="radio" name="question2" value="a"> a) He go to school.</label>
-            <label><input type="radio" name="question2" value="b"> b) He goes to school.</label>
-            <label><input type="radio" name="question2" value="c"> c) He gone to school.</label>
-            <label><input type="radio" name="question2" value="d"> d) He going to school.</label>
-        </div>
-        <div>
-            <p>3. Choose the correct past tense form: "They ___ a movie last night."</p>
-            <label><input type="radio" name="question3" value="a"> a) watch</label>
-            <label><input type="radio" name="question3" value="b"> b) watched</label>
-            <label><input type="radio" name="question3" value="c"> c) watches</label>
-            <label><input type="radio" name="question3" value="d"> d) watching</label>
-        </div>
-        <div>
-            <p>4. Identify the error: "She don’t like apples."</p>
-            <label><input type="radio" name="question4" value="a"> a) She</label>
-            <label><input type="radio" name="question4" value="b"> b) don’t</label>
-            <label><input type="radio" name="question4" value="c"> c) like</label>
-            <label><input type="radio" name="question4" value="d"> d) apples</label>
-        </div>
+<div id="quiz-container">
+    <h1>English Grammar Basics Quiz</h1>
+    <form id="quiz-form">
+        <div id="quiz-questions"></div>
         <button type="button" onclick="submitQuiz()">Submit</button>
     </form>
 </div>
+<script>
+    const quizContainer = document.getElementById('quiz-questions');
+    quizData.forEach((data, index) => {
+        const questionElement = `<div><p>${data.question}</p>
+            <label><input type='radio' name='question${index}' value='a'> ${data.a}</label><br>
+            <label><input type='radio' name='question${index}' value='b'> ${data.b}</label><br>
+            <label><input type='radio' name='question${index}' value='c'> ${data.c}</label><br>
+            <label><input type='radio' name='question${index}' value='d'> ${data.d}</label><br>
+        </div>`;
+        quizContainer.innerHTML += questionElement;
+    });
+</script>
