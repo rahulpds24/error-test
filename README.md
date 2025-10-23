@@ -1,4 +1,4 @@
 # English Grammar Basics Quiz
 
 ## Round 2 Brief
-This is the second round of the English Grammar Basics Quiz. It consists of four questions designed to test your understanding of basic grammar rules. After submitting your answers, your score will be displayed.
+This is the second round of the English Grammar Basics Quiz. Test your knowledge with new questions added to challenge your understanding of grammar. After submitting the quiz, your score will be displayed.
