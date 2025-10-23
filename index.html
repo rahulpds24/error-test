@@ -1,19 +1,2 @@
-<div id="quiz-container">
-    <h1>English Grammar Basics Quiz</h1>
-    <form id="quiz-form">
-        <div id="quiz-questions"></div>
-        <button type="button" onclick="submitQuiz()">Submit</button>
-    </form>
-</div>
-<script>
-    const quizContainer = document.getElementById('quiz-questions');
-    quizData.forEach((data, index) => {
-        const questionElement = `<div><p>${data.question}</p>
-            <label><input type='radio' name='question${index}' value='a'> ${data.a}</label><br>
-            <label><input type='radio' name='question${index}' value='b'> ${data.b}</label><br>
-            <label><input type='radio' name='question${index}' value='c'> ${data.c}</label><br>
-            <label><input type='radio' name='question${index}' value='d'> ${data.d}</label><br>
-        </div>`;
-        quizContainer.innerHTML += questionElement;
-    });
-</script>
+<div id='quiz'></div>
+<button id='submit'>Submit</button>
