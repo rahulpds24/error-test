@@ -1,51 +1,66 @@
 const quizData = [
     {
-        question: 'What is the correct form of the verb in this sentence: She ___ to the store every Saturday.',
-        a: 'go',
-        b: 'goes',
-        c: 'gone',
-        d: 'going',
+        question: 'What is the plural of "child"?',
+        a: 'Childs',
+        b: 'Children',
+        c: 'Childes',
+        d: 'Childrens',
         correct: 'b',
     },
     {
-        question: 'Which of the following sentences is grammatically correct?',
-        a: 'He don’t like pizza.',
-        b: 'He doesn’t likes pizza.',
-        c: 'He doesn’t like pizza.',
-        d: 'He not like pizza.',
-        correct: 'c',
-    },
-    {
-        question: 'Choose the correct word: She is ___ than her brother.',
-        a: 'more smart',
-        b: 'smarter',
-        c: 'most smart',
-        d: 'smartest',
+        question: 'Which sentence is correct?',
+        a: 'He go to school.',
+        b: 'He goes to school.',
+        c: 'He going to school.',
+        d: 'He gone to school.',
         correct: 'b',
     },
     {
-        question: 'Identify the error in this sentence: Each of the players have a unique skill.',
-        a: 'Each',
-        b: 'of',
-        c: 'have',
-        d: 'unique',
+        question: 'What is the past tense of "run"?',
+        a: 'Runned',
+        b: 'Ran',
+        c: 'Running',
+        d: 'Runed',
+        correct: 'b',
+    },
+    {
+        question: 'Which of the following is a correct sentence?',
+        a: 'She don’t like apples.',
+        b: 'She doesn’t likes apples.',
+        c: 'She doesn’t like apples.',
+        d: 'She not like apples.',
         correct: 'c',
     }
 ];
 
+const quiz = document.getElementById('quiz');
+const submitButton = document.getElementById('submit');
+
 let score = 0;
 
-function submitQuiz() {
-    const answers = [
-        'b',
-        'c',
-        'b',
-        'c'
-    ];
-    answers.forEach((answer, index) => {
-        if (answer === quizData[index].correct) {
+function loadQuiz() {
+    quizData.forEach((data, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.innerHTML = `<p>${data.question}</p>`;
+        for (let option in data) {
+            if (option !== 'question' && option !== 'correct') {
+                questionElement.innerHTML += `<label><input type='radio' name='question${index}' value='${option}'> ${data[option]}</label><br>`;
+            }
+        }
+        quiz.appendChild(questionElement);
+    });
+}
+
+function calculateScore() {
+    quizData.forEach((data, index) => {
+        const answer = document.querySelector(`input[name='question${index}']:checked`);
+        if (answer && answer.value === data.correct) {
             score++;
         }
     });
-    alert(`Your score is ${score} out of ${quizData.length}`);
+    alert(`You scored ${score} out of ${quizData.length}`);
 }
+
+submitButton.addEventListener('click', calculateScore);
+
+loadQuiz();
